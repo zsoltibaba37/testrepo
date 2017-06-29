@@ -1,0 +1,7 @@
+#!/bin/bash
+uname=`cat ~/.gitconfig | grep name | awk '{print $3}'`
+echo " Github username : $uname"
+repo_name=`pwd | xargs basename`
+echo " The tested repo name is : $repo_name"
+curl https://api.github.com/repos/$uname/$repo_name
+
